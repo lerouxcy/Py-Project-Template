@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_python_project"
+version = "0.1.0"
+description = "A Python backend project"
+authors = [
+    { name="Your Name", email="your.email@example.com" }
+]
+dependencies = [
+    "pyyaml",
+    # Add other dependencies here
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
