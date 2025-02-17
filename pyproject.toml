@@ -3,18 +3,28 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "my_python_project"
+name = "my_packaging_practice"
 version = "0.1.0"
 description = "A Python backend project"
 authors = [
-    { name="Your Name", email="your.email@example.com" }
+    { name="Name", email="your.email@example.com" }
 ]
+
 dependencies = [
     "pyyaml",
     # Add other dependencies here
 ]
 
-[tool.pytest.ini_options]
+[tool.extra]
+dev-dependencies = ["pytest", "ruff"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W", "C90"]
+ignore = ["E501"]
+exclude = ["tests/", "docs/"]
+
+[tool.pytest]
 minversion = "6.0"
 addopts = "-ra -q"
 testpaths = [
